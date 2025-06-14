@@ -5,6 +5,4 @@
 * SoapySDR - https://github.com/pothosware/SoapySDR/wiki
 * libhydrasdr - https://github.com/hydrasdr/rfone_host
 
-## Documentation
-
-* https://github.com/hydrasdr/SoapyHydraSDR
+An initial Soapy driver and needs some further testing when the SDR is available.
