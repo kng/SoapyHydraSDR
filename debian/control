@@ -1,8 +1,8 @@
 Source: soapyhydrasdr
 Section: hamradio
 Priority: optional
-Maintainer: Jan van Gils https://github.com/janvgils/
-Uploaders: Jan van Gils https://github.com/janvgils/
+Maintainer: PE0SAT <https://github.com/janvgils/>
+Uploaders: PE0SAT <https://github.com/janvgils/>
 Build-Depends:
     debhelper (>= 9.0.0),
     cmake,
