@@ -1,0 +1,30 @@
+Source: soapyhydrasdr
+Section: hamradio
+Priority: optional
+Maintainer: Jan van Gils https://github.com/janvgils/
+Uploaders: Jan van Gils https://github.com/janvgils/
+Build-Depends:
+    debhelper (>= 9.0.0),
+    cmake,
+    libsoapysdr-dev,
+    libhydrasdr-dev
+Standards-Version: 4.5.0
+Homepage: https://github.com/pothosware/SoapyHydraSDR/wiki
+Vcs-Git: https://github.com/pothosware/SoapyHydraSDR.git
+Vcs-Browser: https://github.com/pothosware/SoapyHydraSDR
+
+Package: soapysdr0.7-module-hydrasdr
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: HydraSDR device support for SoapySDR
+ The Soapy HydraSDR project provides a SoapySDR hardware support module.
+
+Package: soapysdr-module-hydrasdr
+Architecture: all
+Depends: soapysdr0.7-module-hydrasdr, ${misc:Depends}
+Description: HydraSDR device support for SoapySDR (default version)
+ The Soapy HydraSDR project provides a SoapySDR hardware support module.
+ .
+ This is an empty dependency package that pulls in the HydraSDR module
+ for the default version of libsoapysdr.
