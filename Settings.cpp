@@ -370,7 +370,7 @@ SoapySDR::ArgInfoList SoapyHydraSDR::getSettingInfo(void) const
     biasOffsetArg.key = "biastee";
     biasOffsetArg.value = "false";
     biasOffsetArg.name = "Bias tee";
-    biasOffsetArg.description = "Enable the 4.5v DC Bias tee to power SpyVerter / LNA / etc. via antenna connection.";
+    biasOffsetArg.description = "Enable the 4.5v DC Bias tee to power a LNA. via antenna connection.";
     biasOffsetArg.type = SoapySDR::ArgInfo::BOOL;
 
     setArgs.push_back(biasOffsetArg);
