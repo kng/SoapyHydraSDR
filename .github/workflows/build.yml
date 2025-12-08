@@ -173,14 +173,18 @@ jobs:
         
         # Verify installation
         echo "=== Verifying LibHydraSDR installation ==="
-        ls -la ../../rfone_host_build/install/lib/ || echo "No lib directory found"
-        ls -la ../../rfone_host_build/install/include/ || echo "No include directory found"
+        if ! [ -d ../../rfone_host_build/install/lib/ ] && ! [ -d ../../rfone_host_build/install/lib64/ ]; then echo "No lib directory found"; fi
+        if ! [ -d ../../rfone_host_build/install/include/ ]; then echo "No include directory found"; fi
         
         # Check for specific files based on platform
         if [ "${{ matrix.platform }}" = "macos" ]; then
           EXPECTED_LIB="../../rfone_host_build/install/lib/libhydrasdr.dylib"
         else
-          EXPECTED_LIB="../../rfone_host_build/install/lib/libhydrasdr.so"
+          if [ -d ../../rfone_host_build/install/lib64/ ]; then
+            EXPECTED_LIB="../../rfone_host_build/install/lib64/libhydrasdr.so"
+          else
+            EXPECTED_LIB="../../rfone_host_build/install/lib/libhydrasdr.so"
+          fi
         fi
         
         if [ -f "$EXPECTED_LIB" ]; then
